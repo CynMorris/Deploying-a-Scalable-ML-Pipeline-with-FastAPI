@@ -15,7 +15,7 @@ To predict the salary category of a person based on their features
 ## Training Data
 Census Data from 1994 was used  
 There are 14 Features  
-Data is Categorical and numerical
+Data is categorical and numerical
 
 ## Evaluation Data
 The test set split was from the original csv  
@@ -26,7 +26,7 @@ Precision, recall, and F1 score
 On the test data, the model achieved a precision of 0.7376, a recall of 0.6.288, and an F1 score of 0.6789    
 
 ## Ethical Considerations 
-The census data that itself may included biases based on such features as gender and occupation. The model should be used for educational purposes only unless further investigation is done.
+The census data itself may included biases based on such features as gender and occupation. The model should be used for educational purposes only unless further investigation is done.
 
 ## Caveats and Recommendations
 Outside factors could contribute to imalance and bias. 
