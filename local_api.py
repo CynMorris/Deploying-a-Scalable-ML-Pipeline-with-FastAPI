@@ -3,13 +3,20 @@ import json
 import requests
 
 # TODO: send a GET using the URL http://127.0.0.1:8000
-r = # Your code here
+# https://www.w3schools.com/python/module_requests.asp
+r = requests.get("http://127.0.0.1:8000") # Your code here
 
 # TODO: print the status code
-# print()
+# https://realpython.com/python-requests/
+# Print the status code of the response
+print(f"Status code: {r.status_code}")
 # TODO: print the welcome message
-# print()
+print(f"Message: {r.json()['message']}")
 
+# Don’t need to create a JSON file manually for this. 
+# When interacting with an API, the response from API server 
+# is typically in JSON format, which the requests library in Python 
+# can handle directly.
 
 
 data = {
@@ -30,9 +37,15 @@ data = {
 }
 
 # TODO: send a POST using the data above
-r = # Your code here
+# https://realpython.com/python-requests/
+r = requests.post("http://127.0.0.1:8000", json=data) # Your code here
 
 # TODO: print the status code
-# print()
+# # https://realpython.com/python-requests/
+print(f"Status code: {r.status_code}")
 # TODO: print the result
-# print()
+#print(f"Result: {r.json()['result']})
+#print(f"Result: r.json())
+# https://www.geeksforgeeks.org/response-text-python-requests/
+print(f"Result: {r.text}")
+

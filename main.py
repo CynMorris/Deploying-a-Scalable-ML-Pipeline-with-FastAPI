@@ -26,21 +26,25 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path = # TODO: enter the path for the saved encoder 
+
+cur_dir = os.getcwd()  # see train_model.py
+
+path =  os.path.join(cur_dir, "model", "encoder.pkl") # TODO: enter the path for the saved encoder 
 encoder = load_model(path)
 
-path = # TODO: enter the path for the saved model 
+path =  os.path.join(cur_dir, "model", "model.pkl") # TODO: enter the path for the saved encoder l 
 model = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
-app = # your code here
+# https://fastapi.tiangolo.com/tutorial/first-steps/
+app = FastAPI() # your code here
 
 # TODO: create a GET on the root giving a welcome message
 @app.get("/")
 async def get_root():
     """ Say hello!"""
     # your code here
-    pass
+    return {"message": "Hello World!"}
 
 
 # TODO: create a POST on a different path that does model inference
@@ -70,5 +74,5 @@ async def post_inference(data: Data):
         # use training = False
         # do not need to pass lb as input
     )
-    _inference = # your code here to predict the result using data_processed
+    _inference = inference(model, data_processed)# your code here to predict the result using data_processed
     return {"result": apply_label(_inference)}
