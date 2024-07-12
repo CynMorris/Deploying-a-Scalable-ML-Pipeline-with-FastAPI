@@ -38,14 +38,20 @@ data = {
 
 # TODO: send a POST using the data above
 # https://realpython.com/python-requests/
-r = requests.post("http://127.0.0.1:8000", json=data) # Your code here
+r = requests.post("http://127.0.0.1:8000/data/", json=data) # Your code here
 
 # TODO: print the status code
 # # https://realpython.com/python-requests/
-print(f"Status code: {r.status_code}")
+#print(f"Status code: {r.status_code}")
 # TODO: print the result
 #print(f"Result: {r.json()['result']})
 #print(f"Result: r.json())
 # https://www.geeksforgeeks.org/response-text-python-requests/
-print(f"Result: {r.text}")
+#print("Result:", r.json())
 
+
+# Printing the status code
+print(f"Status code: {r.status_code}")
+# Printing the result
+#print(f"Result: {r.json()['result']}")
+print(f"Response data: {r.text}")
